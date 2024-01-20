@@ -1,6 +1,8 @@
 let arrMaster = [];
 let clickCount;
 let information = document.getElementById('information');
+let button = document.getElementById('btn');
+
 
 $('.card').each(function (ele) { // 0, 1 , 2, 3 .
 	element = $('.card')[ele];
@@ -15,7 +17,7 @@ $('body').keypress(function (event) {
 			startGame();
 		}
 		else {
-			information.innerHTML = "Press only 's' key to start the game!";
+			information.innerHTML = "Press 's' key or 'button' start the game!";
 		}
 	}
 	else if (event.key === 'r') {
@@ -39,7 +41,7 @@ $('body').keypress(function (event) {
 $('.card').on('click', function hitted(ele) {
 	let color = ele.target.getAttribute('data-backgroundcolor')
 	if (arrMaster.length === 0) {
-		return information.innerHTML = "Press only 's' to start the game!"
+		return information.innerHTML = "Press 's' key or 'button' start the game!"
 	}
 	readValue(color)
 });
@@ -89,7 +91,8 @@ function readValue(clickedColor) {
 		information.innerHTML = "You Lose! Better luck next time."
 		arrMaster = [];
 		clickCount = 0;
-		setTimeout(()=>{information.innerHTML = "Press only 's' key to start the game!"; buttonSound('start')}, 2000)
+		setTimeout(()=>{information.innerHTML = "Press 's' key or 'button' start the game!"; buttonSound('start')}, 2000)
+		button.style.display = "block"
 	}
 }
 
@@ -98,6 +101,7 @@ function startGame() {
 	writeValue()
 	console.log(arrMaster);
 	clickCount = 0;
+	button.style.display = "none"
 }
 
 function buttonSound(color){

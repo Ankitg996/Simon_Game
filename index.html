@@ -15,15 +15,15 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Simon Game!</h1><br>
-		<div id="information" onload="buttonSound('start')">Press only 's' key to start the game!</div>
+		<h1>Simon Game</h1><br>
+		<div id="information" onload="buttonSound('start')">Press 's' key or 'button' start the game!</div>
 		<div class="tiles">
 			<div data-backgroundcolor="green" class="green card">G</div>
 			<div data-backgroundcolor="red" class="red card">R</div>
 			<div data-backgroundcolor="yellow" class="yellow card">Y</div>
 			<div data-backgroundcolor="blue" class="blue card">B</div>
 		</div>
-		<!-- <button>Here</button> -->
+		<button id="btn" onclick="startGame()">Start Game</button>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="./index.js"></script>
